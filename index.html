@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reel & Frame — Visual Storyteller</title>
+<title>Aleksjchen — Visual Storyteller</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -173,13 +173,13 @@
   .work-rail::-webkit-scrollbar{ height:5px; }
   .work-rail::-webkit-scrollbar-thumb{ background:var(--line); }
   .reel{
-    flex:0 0 auto; width:min(72vw, 560px); scroll-snap-align:start;
+    flex:0 0 auto; width:min(52vw, 400px); scroll-snap-align:start;
     position:relative; aspect-ratio:16/10;
     display:flex; flex-direction:column; justify-content:flex-end;
     overflow:hidden; cursor:pointer;
     border:1px solid var(--line);
   }
-  .reel--tall{ aspect-ratio:4/5; width:min(50vw, 340px); }
+  .reel--tall{ aspect-ratio:16/10; width:min(52vw, 400px); }
   .reel-bg{
     position:absolute; inset:0; transition:transform 0.7s cubic-bezier(.2,.7,.2,1);
   }
@@ -330,48 +330,67 @@
   <div class="work-rail-wrap reveal">
     <div class="work-rail" id="rail">
       <article class="reel r1">
-        <div class="reel-bg"></div>
+        <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
+          <source src="videos/canyon-drone.mp4" type="video/mp4">
+        </video>
         <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
         <div class="reel-info">
-          <span class="reel-cat mono">BRAND FILM</span>
-          <h3 class="reel-title">Low Tide, Long Light</h3>
-          <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:52%"></div></div><span>02:14</span></div>
+          <span class="reel-cat mono">AERIAL</span>
+          <h3 class="reel-title">Canyon Drive</h3>
+          <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:0%"></div></div><span>00:17</span></div>
         </div>
       </article>
-      <article class="reel reel--tall r2">
-        <div class="reel-bg"></div>
-        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
+      <article class="reel">
+        <img src="images/socal-dirt-1.jpg" alt="SoCal Dirt equipment detail" style="width:100%;height:100%;object-fit:cover;">
         <div class="reel-info">
-          <span class="reel-cat mono">DOCUMENTARY</span>
-          <h3 class="reel-title">The Quiet Hour</h3>
-          <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:30%"></div></div><span>08:41</span></div>
+          <span class="reel-cat mono">ON SITE</span>
+          <h3 class="reel-title">SoCal Dirt</h3>
+        </div>
+      </article>
+      <article class="reel reel--tall">
+        <img src="images/socal-dirt-2.jpg" alt="Excavator loading dirt" style="width:100%;height:100%;object-fit:cover;">
+        <div class="reel-info">
+          <span class="reel-cat mono">ON SITE</span>
+          <h3 class="reel-title">Loading In</h3>
         </div>
       </article>
       <article class="reel r3">
-        <div class="reel-bg"></div>
-        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
-        <div class="reel-info">
-          <span class="reel-cat mono">MUSIC VIDEO</span>
-          <h3 class="reel-title">Amber Room</h3>
-          <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:71%"></div></div><span>03:52</span></div>
-        </div>
-      </article>
-      <article class="reel reel--tall r4">
-        <div class="reel-bg"></div>
-        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
-        <div class="reel-info">
-          <span class="reel-cat mono">SHORT FILM</span>
-          <h3 class="reel-title">Two Rivers</h3>
-          <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:18%"></div></div><span>11:06</span></div>
-        </div>
-      </article>
-      <article class="reel r5">
-        <div class="reel-bg"></div>
+        <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
+          <source src="videos/porsche-detail.mp4" type="video/mp4">
+        </video>
         <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
         <div class="reel-info">
           <span class="reel-cat mono">COMMERCIAL</span>
-          <h3 class="reel-title">Field Season</h3>
-          <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:44%"></div></div><span>01:30</span></div>
+          <h3 class="reel-title">Full Detail</h3>
+          <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:0%"></div></div><span>00:38</span></div>
+        </div>
+      </article>
+      <article class="reel">
+        <img src="images/socal-dirt-3.jpg" alt="Dump truck on site" style="width:100%;height:100%;object-fit:cover;">
+        <div class="reel-info">
+          <span class="reel-cat mono">ON SITE</span>
+          <h3 class="reel-title">Haul Route</h3>
+        </div>
+      </article>
+      <article class="reel reel--tall">
+        <img src="images/socal-dirt-4.jpg" alt="Dump truck unloading dirt" style="width:100%;height:100%;object-fit:cover;">
+        <div class="reel-info">
+          <span class="reel-cat mono">ON SITE</span>
+          <h3 class="reel-title">Drop Off</h3>
+        </div>
+      </article>
+      <article class="reel">
+        <img src="images/socal-dirt-5.jpg" alt="Hitachi excavator on dirt road" style="width:100%;height:100%;object-fit:cover;">
+        <div class="reel-info">
+          <span class="reel-cat mono">ON SITE</span>
+          <h3 class="reel-title">Moving Through</h3>
+        </div>
+      </article>
+      <article class="reel reel--tall">
+        <img src="images/socal-dirt-6.jpg" alt="Construction equipment lot" style="width:100%;height:100%;object-fit:cover;">
+        <div class="reel-info">
+          <span class="reel-cat mono">ON SITE</span>
+          <h3 class="reel-title">The Yard</h3>
         </div>
       </article>
     </div>
@@ -387,23 +406,11 @@
     <p>Ongoing, unassigned work — the projects made on my own time, for their own reasons.</p>
   </div>
   <div class="grid reveal" style="grid-template-columns:repeat(4,1fr);">
-    <div class="frame" style="aspect-ratio:4/3; cursor:default; grid-column:span 2;">
-      <video style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;" autoplay muted loop playsinline preload="metadata">
+    <div class="frame" style="aspect-ratio:4/3; cursor:default;">
+      <video style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
         <source src="videos/del-mar.mp4" type="video/mp4">
       </video>
       <div class="frame-cap mono">Golden Hour, Del Mar</div>
-    </div>
-    <div class="frame" style="aspect-ratio:4/3; cursor:default; grid-column:span 2;">
-      <video style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
-        <source src="videos/creek-friends.mp4" type="video/mp4">
-      </video>
-      <div class="frame-cap mono">Joshua Tree</div>
-    </div>
-    <div class="frame" style="aspect-ratio:21/9; cursor:default; grid-column:span 4;">
-      <video style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
-        <source src="videos/tokyo-neon.mp4" type="video/mp4">
-      </video>
-      <div class="frame-cap mono">Tokyo</div>
     </div>
   </div>
 </section>
@@ -428,10 +435,10 @@
 <section class="contact" id="contact">
   <div class="contact-top reveal">
     <h2>Let's make<br>something.</h2>
-    <a class="contact-email mono" href="mailto:hello@reelandframe.com">hello@reelandframe.com ↗</a>
+    <a class="contact-email mono" href="mailto:Aleksjchen@gmail.com">Aleksjchen@gmail.com ↗</a>
   </div>
   <div class="footer-row">
-    <span>© 2026 Reel &amp; Frame. All frames reserved.</span>
+    <span>© 2026 Aleksjchen. All frames reserved.</span>
     <div class="footer-links">
       <a href="#">Instagram</a>
       <a href="#">Vimeo</a>
