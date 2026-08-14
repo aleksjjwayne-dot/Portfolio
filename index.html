@@ -166,14 +166,14 @@
   /* ---------- WORK RAIL (horizontal scroll) ---------- */
   .work-rail-wrap{ margin:0 -40px; }
   .work-rail{
-    display:flex; gap:2px; overflow-x:auto; padding:0 40px 24px;
+    display:flex; gap:28px; overflow-x:auto; padding:0 40px 24px;
     scroll-snap-type:x proximity;
     scrollbar-width:thin; scrollbar-color:var(--sage) transparent;
   }
   .work-rail::-webkit-scrollbar{ height:5px; }
   .work-rail::-webkit-scrollbar-thumb{ background:var(--line); }
   .reel{
-    flex:0 0 auto; width:min(52vw, 400px); scroll-snap-align:start;
+    flex:0 0 auto; width:min(74vw, 640px); scroll-snap-align:start;
     position:relative; aspect-ratio:16/10;
     display:flex; flex-direction:column; justify-content:flex-end;
     overflow:hidden; cursor:pointer;
@@ -181,7 +181,7 @@
     transition:border-color 0.4s ease;
   }
   .reel:hover{ border-color:rgba(201,154,91,0.4); }
-  .reel--tall{ aspect-ratio:16/10; width:min(52vw, 400px); }
+  .reel--tall{ aspect-ratio:16/10; width:min(74vw, 640px); }
   .reel-bg{
     position:absolute; inset:0;
     transition:transform 0.9s cubic-bezier(.25,.1,.25,1);
@@ -250,6 +250,11 @@
   .stat-row{ display:flex; gap:40px; margin-top:40px; flex-wrap:wrap; }
   .stat b{ display:block; font-family:'Fraunces', serif; font-size:30px; color:var(--sage); }
   .stat span{ font-size:12px; color:var(--paper-dim); text-transform:uppercase; letter-spacing:0.08em; }
+  .gear-list{ margin-top:48px; padding-top:32px; border-top:1px solid var(--line); max-width:360px; }
+  .gear-label{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--sage); margin-bottom:16px; }
+  .gear-list ul{ list-style:none; display:flex; flex-direction:column; gap:11px; }
+  .gear-list li{ display:flex; justify-content:space-between; align-items:baseline; font-size:15px; color:var(--paper); border-bottom:1px dashed rgba(241,237,226,0.1); padding-bottom:11px; }
+  .gear-list li span{ font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--paper-dim); }
 
   /* ---------- CONTACT / FOOTER ---------- */
   .contact{
@@ -357,6 +362,17 @@
           <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:0%"></div></div><span>00:38</span></div>
         </div>
       </article>
+      <article class="reel">
+        <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
+          <source src="videos/lamborghini.mp4" type="video/mp4">
+        </video>
+        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
+        <div class="reel-info">
+          <span class="reel-cat mono">COMMERCIAL</span>
+          <h3 class="reel-title">Huracán Evo</h3>
+          <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:0%"></div></div><span>00:20</span></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -367,7 +383,6 @@
       <span class="section-num mono">01 — JOURNAL</span>
       <h2>Personal</h2>
     </div>
-    <p>Ongoing, unassigned work — the projects made on my own time, for their own reasons.</p>
   </div>
   <div class="grid reveal" style="grid-template-columns:repeat(4,1fr);">
     <div class="frame" style="aspect-ratio:4/3; cursor:default;">
@@ -386,6 +401,15 @@
       <div class="stat-row">
         <div class="stat"><b>3+</b><span>Years Shooting</span></div>
         <div class="stat"><b>40+</b><span>Brand Projects</span></div>
+      </div>
+      <div class="gear-list">
+        <span class="gear-label mono">Gear</span>
+        <ul>
+          <li><span class="mono">Body</span>Canon R5C</li>
+          <li><span class="mono">Lens</span>RF 24–70mm f/2.8</li>
+          <li><span class="mono">Gimbal</span>DJI RS5</li>
+          <li><span class="mono">Audio</span>DJI Mic 3</li>
+        </ul>
       </div>
     </div>
   </div>
