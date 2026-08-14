@@ -178,12 +178,18 @@
     display:flex; flex-direction:column; justify-content:flex-end;
     overflow:hidden; cursor:pointer;
     border:1px solid var(--line);
+    transition:border-color 0.4s ease;
   }
+  .reel:hover{ border-color:rgba(201,154,91,0.4); }
   .reel--tall{ aspect-ratio:16/10; width:min(52vw, 400px); }
   .reel-bg{
-    position:absolute; inset:0; transition:transform 0.7s cubic-bezier(.2,.7,.2,1);
+    position:absolute; inset:0;
+    transition:transform 0.9s cubic-bezier(.25,.1,.25,1);
+    will-change:transform;
+    transform:translateZ(0) scale(1);
+    backface-visibility:hidden;
   }
-  .reel:hover .reel-bg{ transform:scale(1.06); }
+  .reel:hover .reel-bg{ transform:translateZ(0) scale(1.045); }
   .r1 .reel-bg{ background:linear-gradient(150deg,#0d0d0d,#000 65%), radial-gradient(circle at 70% 30%, rgba(201,154,91,0.24), transparent 55%); }
   .r2 .reel-bg{ background:linear-gradient(200deg,#0a0a0a,#000 70%), radial-gradient(circle at 30% 70%, rgba(168,161,150,0.2), transparent 55%); }
   .r3 .reel-bg{ background:linear-gradient(120deg,#0f0d0a,#000 70%), radial-gradient(circle at 60% 60%, rgba(201,154,91,0.22), transparent 55%); }
@@ -312,7 +318,7 @@
 <header class="hero" id="home">
   <div class="hero-media">
     <video autoplay muted loop playsinline preload="auto">
-      <source src="videos/basketball-hero.mp4" type="video/mp4">
+      <source src="videos/locked-in.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-grain"></div>
@@ -321,7 +327,7 @@
   <div class="timecode mono"><span id="tc">00:00:00:00</span><span class="bar"></span></div>
   <div class="scroll-hint mono">Scroll</div>
   <div class="hero-content">
-    <div class="hero-eyebrow mono"><span class="dot"></span>BASED IN ORANGE COUNTY, CA</div>
+    <div class="hero-eyebrow mono"><span class="dot"></span>BASED IN ORANGE COUNTY, CALIFORNIA</div>
     <h1>A Visual Collection</h1>
   </div>
 </header>
@@ -340,20 +346,6 @@
           <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:0%"></div></div><span>00:17</span></div>
         </div>
       </article>
-      <article class="reel">
-        <img src="images/socal-dirt-1.jpg" alt="SoCal Dirt equipment detail" style="width:100%;height:100%;object-fit:cover;">
-        <div class="reel-info">
-          <span class="reel-cat mono">ON SITE</span>
-          <h3 class="reel-title">SoCal Dirt</h3>
-        </div>
-      </article>
-      <article class="reel reel--tall">
-        <img src="images/socal-dirt-2.jpg" alt="Excavator loading dirt" style="width:100%;height:100%;object-fit:cover;">
-        <div class="reel-info">
-          <span class="reel-cat mono">ON SITE</span>
-          <h3 class="reel-title">Loading In</h3>
-        </div>
-      </article>
       <article class="reel r3">
         <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
           <source src="videos/porsche-detail.mp4" type="video/mp4">
@@ -363,34 +355,6 @@
           <span class="reel-cat mono">COMMERCIAL</span>
           <h3 class="reel-title">Full Detail</h3>
           <div class="reel-scrub mono"><span>00:00</span><div class="track"><div class="fill" style="width:0%"></div></div><span>00:38</span></div>
-        </div>
-      </article>
-      <article class="reel">
-        <img src="images/socal-dirt-3.jpg" alt="Dump truck on site" style="width:100%;height:100%;object-fit:cover;">
-        <div class="reel-info">
-          <span class="reel-cat mono">ON SITE</span>
-          <h3 class="reel-title">Haul Route</h3>
-        </div>
-      </article>
-      <article class="reel reel--tall">
-        <img src="images/socal-dirt-4.jpg" alt="Dump truck unloading dirt" style="width:100%;height:100%;object-fit:cover;">
-        <div class="reel-info">
-          <span class="reel-cat mono">ON SITE</span>
-          <h3 class="reel-title">Drop Off</h3>
-        </div>
-      </article>
-      <article class="reel">
-        <img src="images/socal-dirt-5.jpg" alt="Hitachi excavator on dirt road" style="width:100%;height:100%;object-fit:cover;">
-        <div class="reel-info">
-          <span class="reel-cat mono">ON SITE</span>
-          <h3 class="reel-title">Moving Through</h3>
-        </div>
-      </article>
-      <article class="reel reel--tall">
-        <img src="images/socal-dirt-6.jpg" alt="Construction equipment lot" style="width:100%;height:100%;object-fit:cover;">
-        <div class="reel-info">
-          <span class="reel-cat mono">ON SITE</span>
-          <h3 class="reel-title">The Yard</h3>
         </div>
       </article>
     </div>
@@ -419,14 +383,9 @@
   <div class="about">
     <div class="about-portrait reveal"><div class="frame-bg"></div></div>
     <div class="about-text reveal">
-      <span class="section-num mono">02 — ABOUT</span>
-      <p>I work at the edge of documentary and direction — trying to get close enough that people forget the camera is there.</p>
-      <p>Based between coasts, I split my year between commissioned brand and music-video work and slower, self-initiated projects. My work has screened at a handful of small festivals and been used by outdoor, footwear, and music clients who wanted something that didn't look like everyone else's reel.</p>
-      <p>When I'm not shooting, I'm usually scouting, developing film, or re-cutting something that isn't finished yet.</p>
       <div class="stat-row">
         <div class="stat"><b>3+</b><span>Years Shooting</span></div>
         <div class="stat"><b>40+</b><span>Brand Projects</span></div>
-        <div class="stat"><b>6</b><span>Festival Selections</span></div>
       </div>
     </div>
   </div>
