@@ -88,12 +88,12 @@
     overflow:hidden;
   }
   .hero-media{
-    position:absolute; inset:0;
-    background:
-      radial-gradient(ellipse at 30% 20%, rgba(201,154,91,0.16), transparent 55%),
-      radial-gradient(ellipse at 75% 70%, rgba(201,154,91,0.15), transparent 50%),
-      linear-gradient(180deg, #0a0a0a 0%, #030303 55%, #000000 100%);
-    animation: driftBG 24s ease-in-out infinite alternate;
+    position:absolute; inset:0; overflow:hidden;
+    background:#000;
+    animation: driftBG 30s ease-in-out infinite alternate;
+  }
+  .hero-media video{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
   }
   @keyframes driftBG{
     0%{ transform:scale(1) translate(0,0); }
@@ -107,12 +107,7 @@
     position:absolute; inset:0;
     background:linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 45%, rgba(0,0,0,0.35) 100%);
   }
-  .hero-figure{
-    position:absolute; right:6%; top:50%; transform:translateY(-50%);
-    width:min(38vw, 420px); aspect-ratio:3/4;
-    border:1px solid var(--line);
-    opacity:0.9;
-  }
+  .hero-figure{ display:none; }
   .hero-figure::before{
     content:''; position:absolute; inset:0;
     background:
@@ -315,14 +310,18 @@
 </nav>
 
 <header class="hero" id="home">
-  <div class="hero-media"></div>
+  <div class="hero-media">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="videos/basketball-hero.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-grain"></div>
   <div class="hero-figure"></div>
   <div class="hero-vignette"></div>
   <div class="timecode mono"><span id="tc">00:00:00:00</span><span class="bar"></span></div>
   <div class="scroll-hint mono">Scroll</div>
   <div class="hero-content">
-    <div class="hero-eyebrow mono"><span class="dot"></span>SHOOTING &amp; DIRECTING SINCE 2023 — BASED IN ORANGE COUNTY, CA</div>
+    <div class="hero-eyebrow mono"><span class="dot"></span>BASED IN ORANGE COUNTY, CA</div>
     <h1>A Visual Collection</h1>
   </div>
 </header>
