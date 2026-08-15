@@ -230,21 +230,16 @@
   }
   .reel-info{ position:relative; z-index:2; padding:20px; display:flex; flex-direction:column; gap:8px; }
   .reel-cat{ font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:var(--sage); }
-  .reel-title{ font-family:'Fraunces', serif; font-size:22px; }
-  .play-badge{
-    position:absolute; z-index:2; top:20px; right:20px;
-    width:38px; height:38px; border:1px solid var(--line); border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    background:rgba(7,10,8,0.4);
-  }
-  .play-badge svg{ width:11px; height:11px; }
+  .reel-title{ font-family:'Fraunces', serif; font-size:19px; }
   .view-badge{
     position:absolute; z-index:2; top:20px; left:20px;
     display:flex; align-items:center; gap:6px;
     padding:6px 12px; border:1px solid var(--line); border-radius:20px;
     background:rgba(7,10,8,0.55); backdrop-filter:blur(4px);
     font-size:11px; letter-spacing:0.06em; color:var(--paper);
+    transition:border-color 0.25s ease, background 0.25s ease;
   }
+  a.view-badge:hover{ border-color:rgba(201,154,91,0.5); background:rgba(7,10,8,0.75); }
   .view-badge svg{ width:12px; height:12px; flex-shrink:0; }
   .view-badge b{ color:var(--amber); font-weight:600; }
 
@@ -282,12 +277,10 @@
   .frame-cap .no{ color:var(--amber); margin-right:6px; }
 
   /* ---------- ABOUT ---------- */
-  .about{ display:block; }
-  .about-info{ max-width:640px; }
+  .about{ display:flex; justify-content:center; }
+  .about-info{ max-width:640px; width:100%; }
   .about-info{
-    border:1px solid var(--line); padding:36px 32px;
-    display:flex; flex-direction:column; gap:32px;
-    background:rgba(241,237,226,0.015);
+    display:flex; flex-direction:column; gap:36px;
   }
   .about-portrait{
     aspect-ratio:3/4; position:relative; overflow:hidden; border:1px solid var(--line);
@@ -298,9 +291,10 @@
   .stat:hover{ border:none; background:none; }
   .stat b{ display:block; font-family:'Fraunces', serif; font-size:32px; color:var(--sage); line-height:1.1; }
   .stat span{ font-size:11px; color:var(--paper-dim); text-transform:uppercase; letter-spacing:0.1em; }
-  .gear-list{ padding:0; border:none; background:none; }
+  .spec-row{ display:flex; gap:32px; }
+  .gear-list{ padding:0; border:none; background:none; flex:1; }
   .gear-list:hover{ border:none; }
-  .gear-list:not(:last-child){ padding-bottom:28px; border-bottom:1px solid var(--line); }
+  .spec-row .gear-list:first-child{ padding-right:32px; border-right:1px solid var(--line); }
   .gear-label{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; color:var(--sage); margin-bottom:16px; }
   .gear-list ul{ list-style:none; display:flex; flex-direction:column; gap:12px; }
   .gear-list li{ display:flex; justify-content:space-between; align-items:baseline; font-size:14px; color:var(--paper); }
@@ -326,10 +320,10 @@
   .reveal.in{ opacity:1; transform:translateY(0); }
 
   @media (max-width: 900px){
-    .about{ grid-template-columns:1fr; }
     .grid{ grid-template-columns:repeat(2,1fr); }
     .work-rail{ grid-template-columns:repeat(2,1fr); gap:20px; }
-    .spec-panels{ grid-template-columns:1fr; }
+    .spec-row{ flex-direction:column; gap:28px; }
+    .spec-row .gear-list:first-child{ padding-right:0; padding-bottom:28px; border-right:none; border-bottom:1px solid var(--line); }
 
     .hero-figure{ display:none; }
   }
@@ -404,7 +398,6 @@
         <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
           <source src="videos/canyon-drone.mp4" type="video/mp4">
         </video>
-        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
         <div class="reel-info">
           <span class="reel-cat mono">AERIAL</span>
           <h3 class="reel-title">Turnbull Canyon Drive</h3>
@@ -414,7 +407,6 @@
         <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
           <source src="videos/lamborghini.mp4" type="video/mp4">
         </video>
-        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
         <div class="reel-info">
           <span class="reel-cat mono">COMMERCIAL</span>
           <h3 class="reel-title">Huracán Evo</h3>
@@ -424,7 +416,6 @@
         <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
           <source src="videos/porsche-detail.mp4" type="video/mp4">
         </video>
-        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
         <div class="reel-info">
           <span class="reel-cat mono">COMMERCIAL</span>
           <h3 class="reel-title">Full Detail</h3>
@@ -434,8 +425,7 @@
         <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
           <source src="videos/worried.mp4" type="video/mp4">
         </video>
-        <div class="view-badge"><svg viewBox="0 0 24 24" fill="none" stroke="#f1ede2" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><b>1.6M</b> views · Instagram</div>
-        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
+        <a class="view-badge" href="https://www.instagram.com/aleksjchen/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="#f1ede2" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><b>1.6M</b> views · Instagram</a>
         <div class="reel-info">
           <span class="reel-cat mono">COMMERCIAL</span>
           <h3 class="reel-title">BMW M4</h3>
@@ -445,7 +435,6 @@
         <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
           <source src="videos/locked-in.mp4" type="video/mp4">
         </video>
-        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
         <div class="reel-info">
           <span class="reel-cat mono">AERIAL</span>
           <h3 class="reel-title">Malibu Canyon Drive</h3>
@@ -456,7 +445,6 @@
           <source src="videos/oceanside.mp4" type="video/mp4">
         </video>
         <div class="view-badge"><svg viewBox="0 0 24 24" fill="none" stroke="#f1ede2" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><b>2.3M</b> views · Instagram</div>
-        <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
         <div class="reel-info">
           <span class="reel-cat mono">COASTAL</span>
           <h3 class="reel-title">Oceanside</h3>
@@ -490,8 +478,7 @@
       <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
         <source src="videos/del-mar.mp4" type="video/mp4">
       </video>
-      <div class="view-badge"><svg viewBox="0 0 24 24" fill="none" stroke="#f1ede2" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><b>916.7K</b> views · TikTok</div>
-      <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
+      <a class="view-badge" href="https://www.tiktok.com/@24rchiv3" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="#f1ede2" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><b>916.7K</b> views · TikTok</a>
       <div class="reel-info">
         <span class="reel-cat mono">COASTAL</span>
         <h3 class="reel-title">Golden Hour, Del Mar</h3>
@@ -501,7 +488,6 @@
       <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
         <source src="videos/basketball-compressed.mp4" type="video/mp4">
       </video>
-      <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
       <div class="reel-info">
         <span class="reel-cat mono">LANDMARK</span>
         <h3 class="reel-title">Korean Friendship Bell</h3>
@@ -511,7 +497,6 @@
       <video class="reel-bg" style="width:100%;height:100%;object-fit:cover;" autoplay muted loop playsinline preload="metadata">
         <source src="videos/sturvant.mp4" type="video/mp4">
       </video>
-      <div class="play-badge"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#f1ede2"/></svg></div>
       <div class="reel-info">
         <span class="reel-cat mono">LANDSCAPE</span>
         <h3 class="reel-title">Sturtevant Falls</h3>
@@ -527,22 +512,24 @@
         <div class="stat"><b>3+</b><span>Years Shooting/Editing</span></div>
         <div class="stat"><b>7.7M+</b><span>Reach — Views</span></div>
       </div>
-      <div class="gear-list">
-        <span class="gear-label mono">Software</span>
-        <ul>
-          <li>Adobe After Effects</li>
-          <li>Adobe Lightroom</li>
-          <li>Adobe Photoshop</li>
-        </ul>
-      </div>
-      <div class="gear-list">
-        <span class="gear-label mono">Gear</span>
-        <ul>
-          <li><span class="mono">Body</span>Canon R5C</li>
-          <li><span class="mono">Lens</span>RF 24–70mm f/2.8</li>
-          <li><span class="mono">Gimbal</span>DJI RS5</li>
-          <li><span class="mono">Audio</span>DJI Mic 3</li>
-        </ul>
+      <div class="spec-row">
+        <div class="gear-list">
+          <span class="gear-label mono">Software</span>
+          <ul>
+            <li>Adobe After Effects</li>
+            <li>Adobe Lightroom</li>
+            <li>Adobe Photoshop</li>
+          </ul>
+        </div>
+        <div class="gear-list">
+          <span class="gear-label mono">Gear</span>
+          <ul>
+            <li><span class="mono">Body</span>Canon R5C</li>
+            <li><span class="mono">Lens</span>RF 24–70mm f/2.8</li>
+            <li><span class="mono">Gimbal</span>DJI RS5</li>
+            <li><span class="mono">Audio</span>DJI Mic 3</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
