@@ -55,7 +55,7 @@
     padding:14px 40px;
   }
   .nav-left{ display:flex; align-items:center; gap:32px; justify-self:start; }
-  .nav-links{ display:flex; gap:24px; flex-wrap:wrap; max-width:420px; }
+  .nav-links{ display:flex; gap:22px; flex-wrap:nowrap; max-width:none; white-space:nowrap; }
   .nav-links a{
     font-size:13px; text-transform:uppercase; letter-spacing:0.08em;
     color:var(--paper-dim);
@@ -69,21 +69,14 @@
   .nav-links a:hover, .nav-links a.active{ color:var(--paper); }
   .nav-links a:hover::after, .nav-links a.active::after{ width:100%; }
   .brand{
-    font-family:'Fraunces', serif; font-size:20px; font-weight:600;
-    letter-spacing:0.01em;
-    position:absolute;
-    left:50%;
-    top:22px;
-    transform:translateX(-50%);
-    z-index:120;
-    white-space:nowrap;
-    transition:color 0.25s ease, top 0.4s ease; cursor:pointer;
+    font-family:'Fraunces', serif; font-size:22px; font-weight:600;
+    letter-spacing:0.01em; justify-self:center;
+    transition:color 0.25s ease; cursor:pointer;
   }
-  .nav.scrolled .brand{ top:14px; }
   .brand:hover{ color:var(--amber); }
-  .nav-social{ display:flex; gap:16px; align-items:center; justify-self:end; }
-  .nav-social a{ opacity:0.8; transition:opacity 0.25s; }
-  .nav-social a:hover{ opacity:1; }
+  .nav-social{ display:flex; gap:20px; align-items:center; justify-self:end; }
+  .nav-social a{ opacity:0.85; transition:opacity 0.25s, transform 0.25s; display:flex; align-items:center; justify-content:center; }
+  .nav-social a:hover{ opacity:1; transform:scale(1.12); color:var(--amber); }
   .nav-toggle{ display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; z-index:110; }
   .nav-toggle span{ width:22px; height:1.5px; background:var(--paper); display:block; }
 
@@ -256,28 +249,6 @@
   }
   .frame-cap .no{ color:var(--amber); margin-right:6px; }
 
-  /* ---------- PIXIESET GALLERY ---------- */
-  .gallery-shell{
-    border:1px solid var(--line);
-    background:rgba(241,237,226,0.015);
-    overflow:hidden;
-  }
-  .gallery-top{
-    display:flex; justify-content:space-between; align-items:flex-end; gap:24px;
-    padding:28px; border-bottom:1px solid var(--line); flex-wrap:wrap;
-  }
-  .gallery-top h2{ font-size:clamp(28px, 3.6vw, 46px); }
-  .gallery-top p{ color:var(--paper-dim); max-width:48ch; font-size:14px; line-height:1.6; margin-top:8px; }
-  .gallery-link{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:12px 16px; border:1px solid var(--line);
-    font-size:12px; text-transform:uppercase; letter-spacing:0.12em;
-    transition:border-color .3s ease, background .3s ease, color .3s ease;
-  }
-  .gallery-link:hover{ border-color:var(--amber); background:rgba(201,154,91,0.07); }
-  .gallery-embed{ width:100%; height:780px; border:0; display:block; background:#fff; }
-  .gallery-note{ padding:14px 28px; border-top:1px solid var(--line); color:var(--sage); font-size:11px; line-height:1.6; }
-
   /* ---------- ABOUT ---------- */
   .about{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start; }
   .about-portrait{
@@ -345,9 +316,6 @@
     .work-rail{ grid-template-columns:1fr; }
     .hero-content{ padding:0 22px 70px; }
     .scroll-hint{ display:none; }
-    .gallery-embed{ height:620px; }
-    .gallery-top{ padding:22px; }
-    .gallery-note{ padding:12px 22px; }
   }
 </style>
 </head>
@@ -362,11 +330,20 @@
       <a href="#personal">Personal</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="#gallery">Gallery</a>
+      <a href="https://aleksjchen.pixieset.com/" target="_blank" rel="noopener">Gallery</a>
     </div>
   </div>
   <a class="brand" href="mailto:Aleksjchen@gmail.com">Aleksjchen</a>
-  <div class="nav-social"></div>
+  <div class="nav-social">
+    <a href="https://www.instagram.com/aleksjchen/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@24rchiv3" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.31 1.38V7.3s-1.88.09-3.25-1.48z"/></svg>
+    </a>
+  </div>
+</nav>
+  <a class="brand" href="mailto:Aleksjchen@gmail.com">Aleksjchen</a>
 </nav>
 
 <header class="hero" id="home">
@@ -475,34 +452,13 @@
   </div>
 </section>
 
-<section id="gallery">
-  <div class="gallery-shell reveal">
-    <div class="gallery-top">
-      <div>
-        <span class="section-num mono">03 / GALLERY</span>
-        <h2>Photography Gallery</h2>
-        <p>Browse my latest photography collections hosted on Pixieset.</p>
-      </div>
-      <a class="gallery-link mono" href="https://aleksjchen.pixieset.com/" target="_blank" rel="noopener">View Full Gallery ↗</a>
-    </div>
-    <iframe
-      class="gallery-embed"
-      src="https://aleksjchen.pixieset.com/"
-      title="Aleksjchen Pixieset Photo Gallery"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin">
-    </iframe>
-    <div class="gallery-note mono">If Pixieset blocks embedded viewing in a browser, use “View Full Gallery” above.</div>
-  </div>
-</section>
-
 <section id="about">
   <div class="about">
     <div class="about-portrait reveal"><div class="frame-bg"></div></div>
     <div class="about-text reveal">
       <div class="stat-row">
         <div class="stat"><b>3+</b><span>Years Shooting</span></div>
-        <div class="stat"><b>7.7M+</b><span>Total Views</span></div>
+        <div class="stat"><b>7.7M+</b><span>Views — IG &amp; TikTok</span></div>
       </div>
       <div class="spec-panels">
         <div class="gear-list">
@@ -535,6 +491,8 @@
   <div class="footer-row">
     <span>© 2026 Aleksjchen. All frames reserved.</span>
     <div class="footer-links">
+      <a href="https://www.instagram.com/aleksjchen/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@24rchiv3" target="_blank" rel="noopener">TikTok</a>
       <a href="#">Shop</a>
     </div>
   </div>
